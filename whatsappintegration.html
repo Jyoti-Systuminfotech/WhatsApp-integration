@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WhatsApp Live Chat Plugin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="plugin/components/font-awesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="plugin/czm-chat-support.css" rel="stylesheet">
+  
+</head>
+<body>
+    <a href="https://wa.me/1234567890?text=hello+123" target="_blank"  id="whatsapp-btn">
+        <!-- <i class="bi bi-whatsapp"></i> -->
+    </a>
+       
+  <script src="plugin/components/jquery/jquery-1.9.0.min.js"></script>
+  <script src="plugin/components/moment/moment.min.js"></script>
+  <script src="plugin/components/moment/moment-timezone-with-data.min.js"></script>
+  <script src="plugin/czm-chat-support.min.js"></script>
+  <script>
+    $('#whatsapp-btn').czmChatSupport({
+    
+        button: {
+            position: "right",
+            style: 1,
+            src: '<i class="bi bi-whatsapp"></i>',
+            backgroundColor: "#10c379",
+            effect: 1,
+            notificationNumber: "1",
+            speechBubble: "How can we help you?",
+            pulseEffect: true,
+            text: {
+                title: "Need help? Chat with us",
+                description: "Customer Support",
+                online: "I'm Online",
+                offline: "I will be back soon"
+            }
+        },
+	    popup: {
+            automaticOpen: false,
+            outsideClickClosePopup: true,
+            effect: 1,
+            header: {
+                backgroundColor: "#10c379",
+		},
+		persons: [
+		{
+			avatar: {
+				src: '<i class="fab fa-whatsapp"></i>',
+				backgroundColor: "#10c379",
+				onlineCircle: true
+			},
+			text: {
+				title: "Need help? Chat with us",
+				description: "Customer Support",
+
+				message: false,
+				textbox: false,
+				button: "Start Chat"
+			},
+			link: {
+				desktop: "https://web.whatsapp.com/send?phone=7388562717&text=Hello,How are you",
+				mobile: "https://wa.me/7388562717/?text=Hello,How are you"
+			},
+            onlineDay: {
+				sunday: "00:00-23:59",
+				monday: "00:00-23:59",
+				tuesday: "00:00-23:59",
+				wednesday: "00:00-23:59",
+				thursday: "00:00-23:59",
+				friday: "00:00-23:59",
+				saturday: "00:00-23:59"
+			}
+		},
+		]
+	},
+
+	sound: false,
+	changeBrowserTitle: "New Message!",
+	cookie: false,
+});
+
+</script>
+  <script src="whatsappintegration.js"></script>
+</body>
+</html>
